@@ -38,21 +38,22 @@ static const char *TAG = "main";
 
 int main(int argc, char *argv[])
 {
+    printf("\r\n**************************** TEST ****************************\r\n\r\n");
     qifi_parser_t parser;
     qifi_err_t ret = QIFI_PARSE_OK;
     uint32_t test_counts = sizeof(string) / sizeof(string[0]);
 
     for (int i = 0; i < test_counts; ++i) {
         qifi_parser_init(&parser);
-        QIFI_LOGD(TAG, "Start Parse String[%d]: %s", i, string[i]);
+        QIFI_LOGD(TAG, "start parse string[%d]: %s", i, string[i]);
         ret = qifi_parser_parse(&parser, string[i], strlen(string[i]));
 
         if (ret == QIFI_PARSE_OK) {
-            QIFI_LOGD(TAG, "String[%d] Parse OK!\n------\nTYPE:%d\nSSID(%d):%.*s\nPASSWORD(%d):%.*s\nHIDDEN:%d\n------",
+            QIFI_LOGD(TAG, "[OK]string %d parse succeess!\r\n------\r\nTYPE:%d\r\nSSID(%d):%.*s\r\nPASSWORD(%d):%.*s\r\nHIDDEN:%d\r\n------",
                      i, parser.type, parser.ssid_len, parser.ssid_len, parser.ssid,
                      parser.password_len, parser.password_len, parser.password, parser.ssid_hidden);
         } else {
-            QIFI_LOGD(TAG, "ret:0x%x", ret);
+            QIFI_LOGD(TAG, "[Failed]string %d parse failed! ret:0x%X", i, ret);
         }
     }
 

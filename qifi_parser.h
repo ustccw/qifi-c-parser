@@ -68,7 +68,7 @@ more details see as: https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-
 #define QIFI_STRING_MIN                 16          /*!< Minimum length of input string */
 
 /**
- * @brief Mesh error code definition
+ * @brief QiFi parse input length definition
  */
 #define QIFI_SSID_LEN_MAX               32          /*!< Minimum SSID length of WiFi configuration */
 #define QIFI_PASSWORD_LEN_MAX           64          /*!< Minimum password length of WiFi configuration */
