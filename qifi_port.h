@@ -23,6 +23,8 @@
 */
 #pragma once
 
+#include <stdio.h>
+
 /**
  * @brief Used to debug parse workflow
  */

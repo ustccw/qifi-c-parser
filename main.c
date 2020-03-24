@@ -25,7 +25,7 @@
 #include <string.h>
 #include "qifi_parser.h"
 
-const uint8_t *string[] = {
+static uint8_t *string[] = {
     "WIFI:T:WPA;S:mynetwork;P:mypass;;",
     "WIFI:T:WEP;S:mynetwork;P:mypass;H:true;",
     "WIFI:T:nopass;S:12345678901234567890123456789012;P:1234567890123456789012345678901234567890123456789012345678901234;H:true;",
@@ -36,7 +36,7 @@ const uint8_t *string[] = {
 
 static const char *TAG = "main";
 
-void app_main()
+int main(int argc, char *argv[])
 {
     qifi_parser_t parser;
     qifi_err_t ret = QIFI_PARSE_OK;
@@ -57,4 +57,5 @@ void app_main()
     }
 
     QIFI_LOGD(TAG, "TEST DONE");
+    return 0;
 }
