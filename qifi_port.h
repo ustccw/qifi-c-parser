@@ -25,6 +25,10 @@
 
 #include <stdio.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @brief Used to debug parse workflow
  */
@@ -36,3 +40,7 @@
         printf("\r\n");                 \
     } while(0)
 #endif // !QIFI_LOGD
+
+#ifdef __cplusplus
+}
+#endif
